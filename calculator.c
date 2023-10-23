@@ -77,7 +77,7 @@ void print_help() {
 // reads the window data from the save file and returns it as an array of values.
 long double *load_window_data() {
     FILE *window_file;
-    char *window_data = malloc(1 * MAX_INPUT_LENGTH * 4);
+    char *window_data = malloc(1 * MAX_INPUT_LENGTH * 4 + 3);
     char *string_data;
     long double *output = malloc(sizeof(long double));
 

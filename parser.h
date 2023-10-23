@@ -191,7 +191,9 @@ PDEF p_state identify(char c) {
 PDEF void tokenize(p_data *data) {
 
     if(data -> state == STATE_err) {
-        throw_error("invalid token");
+        printf("Error: invalid token\n");
+        return;
+        // throw_error("invalid token");
     } data -> state = STATE_str;
 
     // state machine loop until end or error encountered.
@@ -279,7 +281,8 @@ PDEF void infix_to_postfix(p_data *data) {
     int top = 0, output_position = 0, pcount = 0;
 
     if(data -> state == STATE_err) {
-        throw_error("invalid token");
+        printf("Error: invalid token\n");
+        // throw_error("invalid token");
     } data -> state = STATE_str;
 
     // loops to the end of token array.
